@@ -1,0 +1,29 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #ffd6e8;
+  text-align: center;
+  padding-top: 80px;
+}
+
+button {
+  /*font-size: 20px;*/
+  /*padding: 12px 28px;*/
+  /*margin: 12px;*/
+  /*border-radius: 8px;*/
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#yesBtn,
+#noBtn {
+  /*font-size: 18px*;/
+  /*padding: 12px 20px;*/
+  /*border-radius: 10px;*/
+  cursor: pointer;
+}
