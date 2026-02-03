@@ -1,6 +1,7 @@
 import { scenes } from "./scenes.js";
 
 const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
 const meme = document.getElementById("meme");
 const acceptButton = document.getElementById("acceptBtn");
 const rejectButton = document.getElementById("rejectBtn");
@@ -13,26 +14,29 @@ function render(step) {
   meme.src = scene.meme;
   acceptButton.textContent = scene.acceptText;
   rejectButton.textContent = scene.rejectText;
+
+  // no subtitle until final scene
+  subtitle.style.display = "none";
+
+  // disable reject button on second to last scene
+  if (step >= scenes.length - 1) {
+    rejectButton.disabled = true;
+  }
 }
 
 acceptButton.addEventListener("click", () => {
   // final scene when proposal is accepted
-  title.textContent = "YIPPEE! ❤️🥰";
+  title.textContent = "YIPPEE!!! ❤️🥰";
   meme.src = "assets/cheer.gif";
   acceptButton.style.display = "none";
   rejectButton.style.display = "none";
+  subtitle.style.display = "block";
 });
 
 rejectButton.addEventListener("click", () => {
-  sceneIndex++;
-
   // Move through scenes on every rejection
+  if (sceneIndex < scenes.length - 1) sceneIndex++;
   render(sceneIndex);
-
-  // On the last scene, disable the reject button
-  if (sceneIndex >= scenes.length) {
-    rejectButton.style.disabled = true;
-  }
 });
 
 // render initial scene

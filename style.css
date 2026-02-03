@@ -1,29 +1,32 @@
 body {
   font-family: system-ui, sans-serif;
-  background: #ffd6e8;
-  text-align: center;
-  padding-top: 80px;
+  background: #f6dae6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 button {
-  /*font-size: 20px;*/
-  /*padding: 12px 28px;*/
-  /*margin: 12px;*/
-  /*border-radius: 8px;*/
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.container {
+  text-align: center;
 }
 
 .buttons {
   display: flex;
-  gap: 12px;
+  gap: 25px;
   justify-content: center;
-  margin-top: 16px;
-}
-
-#yesBtn,
-#noBtn {
-  /*font-size: 18px*;/
-  /*padding: 12px 20px;*/
-  /*border-radius: 10px;*/
-  cursor: pointer;
+  margin-top: 20px;
 }
