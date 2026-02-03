@@ -1,11 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: system-ui, sans-serif;
   background: #f6dae6;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
+  padding: 24px;
 }
 
 button {
@@ -22,6 +30,17 @@ button:disabled {
 
 .container {
   text-align: center;
+  width: 100%;
+  max-width: 520px;
+}
+
+#meme {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  max-height: 50vh;
+  object-fit: contain;
+  margin: 16px auto;
 }
 
 .buttons {
@@ -29,4 +48,5 @@ button:disabled {
   gap: 25px;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
