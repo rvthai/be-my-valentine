@@ -6,6 +6,14 @@ const meme = document.getElementById("meme");
 const acceptButton = document.getElementById("acceptBtn");
 const rejectButton = document.getElementById("rejectBtn");
 
+// Preload all assets
+const urls = scenes.map((s) => s.meme);
+urls.push("assets/cheer.gif"); // add final asset not in scenes list
+urls.forEach((url) => {
+  const img = new Image();
+  img.src = url;
+});
+
 let sceneIndex = 0;
 
 function render(step) {
